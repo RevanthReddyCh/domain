@@ -30,3 +30,12 @@ resource "aws_route53_record" "jaffa" {
 
   records = ["44.217.42.56"]     # Replace with the new record value(s)
 }
+
+resource "aws_route53_record" "auto" {
+  zone_id = data.aws_route53_zone.revanthreddych.zone_id # Replace with your Route 53 hosted zone ID
+  name    = "auto.revanthreddych.com"   # Replace with the domain name to update
+  type    = "A"             # Replace with the record type (A, CNAME, MX, etc.)
+  ttl     = 300             # Replace with the TTL value in seconds
+
+  records = ["44.217.42.56"]     # Replace with the new record value(s)
+}
